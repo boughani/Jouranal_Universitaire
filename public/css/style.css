@@ -1,0 +1,296 @@
+*{
+    box-sizing:border-box;
+    /* so that all the margin and the padding is taken into considiration while calculating the elements size */
+}
+
+body, html{
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+    color: rgb(0, 0, 0, .87);
+    line-height: 1.8;
+    font-weight: 500;
+    margin:2px;
+    padding:0;
+}
+.clear{
+    clear:both; 
+}
+.inlinediv{
+    
+    left: 15%;
+    position: absolute;
+    margin-top:20px ;
+    background-color:white ; 
+    padding-bottom:15px ;
+    display: none;
+}
+
+.inlinediv a {
+    display:block ; 
+}
+.hovershow{
+    position: relative;
+}
+
+.topbar{
+    position: fixed;/*so taht it doensn't move while scroclling down*/
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    background: white;
+    height: 91px;
+    z-index: 3; 
+    /*so that the shadow of the container and the side bar doesnt effect it 
+    and so that it appears on top of them when scrolling down */
+    box-shadow: 0px 4px 10px rgb(0, 0, 0, .1);
+}
+
+.topbar nav{
+    float: left;
+    margin: 31px;
+}
+
+.topbar nav a {
+    color: #9F9F9F;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0 53px;
+    position: relative;
+}
+.hovershow:hover + .inlinediv{
+    display: block ;
+}
+.topbar nav a:hover, .topbar nav a.active{
+    color: #000;
+}
+
+.topbar .social_media{
+    float: Right;
+    margin: 31px 28px;
+}
+
+.social_media a{
+    margin:0px 15px;
+    opacity: .58;
+}
+
+.social_media a:hover{
+    opacity: 1;
+}
+
+.font-image {
+    height:427px;
+    background:no-repeat center center / cover url("/img/image.jpg"); /*needs more resurch*/
+
+}
+ .hovershow:hover .inlinediv{
+    display: block;
+}
+
+main.main{
+    position: relative; /* essencial for the functionality of the Z-index  */
+    background: #fff;
+    width: 70%;
+    bottom:-50%;
+    z-index: 2; /* so that it appears on top of the sidebar */
+    box-shadow: 4px 0px 30px rgb(0, 0, 0, .1);
+}
+
+aside.sidebar{
+    position: relative; /* essencial for the functionality of the Z-index  */
+    z-index: 1; /* so that it appears under the main div*/
+    background: #FBFBFB;
+    /* background: rgb(209, 209, 209); */
+    width: 30%;
+    padding:40px;
+    font-size: 17px;
+    box-shadow: 4px 0px 30px rgb(0, 0, 0, .2);
+    /* height: 1102px; */
+
+}
+
+.sidebar .sidebar-title{
+    font-size:30px;
+    color:#000;
+    margin:20px 0;
+}
+
+.sidebar .sidebar-title:first-child{
+    margin-top:0; /*so that it doesn't be too far from the top */
+}
+
+
+.sidebar ul{
+    margin: 0;
+    padding: 0;
+    list-style-type:none;
+}
+
+.sidebar li {
+    padding: 6px 0;
+}
+
+.sidebar li:first-child {
+    padding-top:0;
+    /* so that it starts paddin only starting from the 2nd article */
+}
+
+.sidebar li:last-child {
+    padding-bottom:0;
+    /* so that the gap between the end of the last article and the background isn't huge */
+}
+.sidebar a{
+    color:#9F9F9F;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+
+
+.sidebar hr {
+    border: none;
+    background: #9F9F9F;
+    height: 1px;
+    margin: 40px 0;
+}
+
+.content{
+    display:flex;
+    /* so that the the elemnts of this div algine next to each other and have the same hieght */ 
+    /* the defult setting for the flex property is " strech " */
+}
+
+.container{
+    max-width: 940px; /* maintaining the space for the text */
+    margin: 0 auto;
+    flex:1; /* first one to the right */
+
+
+}
+
+.article{
+    position: relative;
+    padding-left: 333px;
+    margin: 50px 0;
+    min-height: 208px;
+}
+
+.article a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.article a:hover {
+    text-decoration: underline;
+}
+.article-img {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 308px;
+    float: left;
+    margin-right: 25px;
+}
+
+.article-img img{
+    width: 100%;
+    height: auto; 
+}
+
+.article-date {
+    font-weight: 300 ;
+    color: rgb(0, 0, 0, .6);
+    margin-bottom: 5px;
+}
+
+.article-titre {
+    font-size: 2.25rem;
+    line-height: 1.1;
+    font-family: "Cardo", serif;
+    margin: 0 0 15px 0 ;
+}
+
+a .article-titre {
+    color: #000;
+    text-decoration: none;
+}
+
+.footer{
+    clear:both;
+    position: relative; /* essencial for the functionality of the Z-index  */
+    z-index: 3; /* it shows above all */
+    box-shadow: none;
+    background-color: rgba(172, 170, 170, 0.315);
+}
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600);
+
+
+.comment{
+  width:600px;
+  padding:5px;
+  margin:20px auto 0 auto;
+}
+
+.comment-content{
+  float:left;
+  margin:0 0 0 40px;
+  width:400px;
+}
+
+.comment-content > span{
+  line-height:150%;
+  color:#444;
+  background:#f5f5f5;
+  display:block;
+  width:100%;
+  padding:10px 15px 10px 15px;
+  font-size:.9em;
+  display:block;
+  position:relative;
+  border-radius:3px;
+  box-shadow:
+    1px 1px 3px rgba(0,0,0,.3);}
+
+.comment-content > span:before{
+  content:'';
+  position:absolute;
+  top:28px;
+  left:-28px;
+  display:block;
+  width:0;
+  height:0;
+  border:1em solid #f5f5f5;
+  border-color:transparent #f5f5f5 transparent transparent; 
+}
+
+.comment p{
+  font-family:'Open Sans';
+  text-shadow:1px 1px 2px #fff;
+}
+
+.comment strong{font-weight:700;}
+.comment .author{font-weight:300;font-size:.8em}
+
+.comment img{
+  float:left;
+  max-width:120px;
+  border-radius:60px;
+  box-shadow:
+    0 0 0 1px rgba(0,0,0,.2),
+    0 0 0 7px rgba(200,200,200,1),
+    0 0 0 9px rgba(175,175,175,1),
+    0 0 20px rgba(0,0,0,.7);
+  margin:20px 0 0 10px;
+}
+
+footer.Footer {
+    text-align: center ;
+    height: 60px ; 
+    padding: 15px;
+}
+  
